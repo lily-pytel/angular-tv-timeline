@@ -1,0 +1,20 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="discardModal" aria-labelledby="discardModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <table class="table">
+        <tr ng-repeat="card in game.discard">
+          <td>
+            <img class="board-card-image" ng-src="{{game.imageBaseURL + card.imgPath}}">
+          </td>
+          <td>{{card.title}}</td>
+          <td>{{card.year}}</td>
+        </tr>
+      </table>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div id="timeline-board" ng-show="game.selectedCard !== null">
+    <div ng-repeat="card in game.board | orderBy: 'year'" class="board-card-wrapper">
+      <table class="single-card">
+        <tr>
+          <td></td>
+          <td><img class="board-card-image" ng-src="{{game.imageBaseURL + card.imgPath}}"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="arrow-button">
+            <button class="btn btn-link" ng-click="game.placeCard(false, card)">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </button>
+          </td>
+          <td class="card-title text-center">{{card.title | limitTo : game.titleLimit}}{{card.title.length > game.titleLimit ? '...' : ''}}</td>
+          <td class="arrow-button">
+            <button class="btn btn-link" ng-click="game.placeCard(true, card)">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-center card-date">{{card.year}}</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+</div>

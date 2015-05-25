@@ -1,0 +1,17 @@
+<div ng-controller="CardsCtrl as cards">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Year</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat='card in cards.availableCards'>
+				<td>{{card.title}}</td>
+				<td>{{card.year}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

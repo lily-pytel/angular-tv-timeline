@@ -1,0 +1,24 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <table class="single-card">
+      <tr>
+        <td>
+          <button class="btn btn-link" ng-click="game.placeCard(false, card)">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+          </button>
+        </td>
+        <td class="card-title text-center">{{card.title | limitTo : game.titleLimit}}{{card.title.length > game.titleLimit ? '...' : ''}}</td>
+        <td>
+          <button class="btn btn-link" ng-click="game.placeCard(true, card)">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="text-center card-date">{{card.year}}</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>

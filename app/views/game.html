@@ -1,0 +1,50 @@
+<div ng-controller="GameCtrl as game">
+  <ng-include src="'/views/discard-pile.html'" scope="" onload=""></ng-include>
+
+  <div ng-show="game.gameOver" ng-class="{'game-won':game.gameWon, 'game-lost':!game.gameWon}">
+  </div>
+
+  <div ng-show="!game.gameOver">
+    <div class="row">
+      <div class="col-md-2">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#discardModal">
+          <span class="glyphicon glyphicon-trash"></span>
+          Discard Pile
+          <span class="badge">{{game.discard.length}}</span>
+        </button>
+      </div>
+      <div class="col-md-2" style="margin-top:6px">
+        Remaining Attempts
+        <span class="badge">{{game.totalAttempts - game.discard.length}}</span>
+      </div>
+      <div class="col-md-2" style="margin-top:6px">
+        <span>Remaining Cards <span class="badge">{{game.deck.length}}</span></span>
+      </div>
+    </div>
+
+    <br>
+
+    <h3>Board</h3>
+    <br>
+
+    <ng-include src="'/views/timeline-board.html'" scope="" onload=""></ng-include>
+
+    <br>
+    <h3>Your Hand</h3>
+    <br>
+
+    <ng-include src="'/views/timeline-hand.html'" scope="" onload=""></ng-include>
+  </div>
+
+  <br><br>
+  <div class="text-center">
+    <button ng-click="game.startGame()" class="btn btn-primary">New Game</button>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    // silence is golden
+  });
+</script>

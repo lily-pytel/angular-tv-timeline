@@ -1,0 +1,15 @@
+<div class="hand-wrapper">
+	<div class="hand-card"
+    contentEditable="true"
+		ng-repeat="card in game.hand"
+		ng-class="{'selected-card':game.userCard.id === card.id}"
+		ng-click="game.selectCard(card)"
+		style="cursor:pointer">
+		<div>
+			<img class="card-image" ng-src="{{game.imageBaseURL + card.imgPath}}">
+		</div>
+		<div class="text-center" title="{{card.title}}">
+			{{card.title | limitTo : game.titleLimit}}{{card.title.length > game.titleLimit ? '...' : ''}}
+		</div>
+	</div>
+</div>
